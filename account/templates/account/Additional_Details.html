@@ -1,0 +1,408 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <title>Additional Details</title>
+  <style>
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      margin-right: -20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px #000;
+      /* margin -100px; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-body ">
+    <h4 class="card-title text-center"> <b>Additional Details</b></h4><br>
+    <div class="container">
+      <form class=" form-container" action="/account/additionaldetails/{{lead.lead_id}}" method="POST">
+        {% csrf_token %}
+        <!-- {% csrf_token %} -->
+        <!-- <p class="card-description"> Personal info </p> -->
+
+        <!-- <div class="container"> -->
+        <script type="text/javascript">
+          $(function () {
+            $("#contactPerson").click(function () {
+              if ($(this).is(":checked")) {
+                $("#details1").show();
+              } else {
+                $("#details1").hide();
+              }
+            });
+          });
+        </script>
+        <div>
+          <label for="contactPerson">
+            <input type="checkbox" name="isdiff" id="contactPerson" />
+            <b>Is Customer and Contact Person Different</b>
+          </label>
+        </div>
+        <hr>
+
+        <div class="container" id="details1" style="display: none">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-8 col-form-label"><b>Contact Person </b></label>
+                <div class="col-sm-9">
+                  <input type="text" name="con_person" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label><b>Contact Person Number</b></label>
+                <div class="col-sm-9">
+                  <input type="tel" pattern="[0-9]{10}" name="con_phone" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-8 col-form-label"><b>Customer Name</b></label>
+                <div class="col-sm-9">
+                  <input type="text" name="name" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label><b>Income Holder</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="incomeHolder">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-6 col-form-label"><b>Property Owner</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="propertyOwner">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-8 col-form-label"><b>Applicant Type</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="applicantType">
+                    <option value="Applicant">Applicant</option>
+                    <option value="1st Co-Applicant">1st Co-Applicant</option>
+                    <option value="2nd Co-Applicant">2nd Co-Applicant</option>
+                    <option value="3rd Co-Applicant">3rd Co-Applicant</option>
+                    <option value="4th Co-Applicant">4th Co-Applicant</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><b>Relation</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="relation">
+                    <option value="Self">Self</option>
+                    <option value="Husband">Husband</option>
+                    <option value="Wife">Wife</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Son">Son</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-6 col-form-label"><b>Customer Type</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="customerType">
+                    <option value="Salaried">Salaried</option>
+                    <option value="Self Employed">Self Employed</option>
+                    <option value="Salaried Professional">Salaried Professional</option>
+                    <option value="Business Professional">Business Professional</option>
+                    <option value="Housewife">Housewife</option>
+                    <option value="Student">Student</option>
+                    <option value="Retired Pensioner">Retired Pensioner</option>
+                    <option value="Retired">Retired</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div><br>
+          <hr>
+        </div>
+
+        <script type="text/javascript">
+          $(function () {
+            $("#customerDetails").click(function () {
+              if ($(this).is(":checked")) {
+                $("#details2").show();
+              } else {
+                $("#details2").hide();
+              }
+            });
+          });
+        </script>
+        <div>
+          <label for="customerDetails">
+            <input type="checkbox" name="add_det" id="customerDetails" />
+            <b>Additional Details Of Customer</b>
+          </label>
+        </div>
+        <hr>
+
+        <div class="container" id="details2" style="display: none">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-8 col-form-label"><b>Customer Name</b></label>
+                <div class="col-sm-9">
+                  <input type="text" name="name_1" class="form-control" placeholder="Enter Full Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label><b>Income Holder</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="incomeHolder_1">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-6 col-form-label"><b>Property Owner</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="propertyOwner_1">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-8 col-form-label"><b>Applicant Type</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="applicantType_1">
+                    <option value="Applicant">Applicant</option>
+                    <option value="1st Co-Applicant">1st Co-Applicant</option>
+                    <option value="2nd Co-Applicant">2nd Co-Applicant</option>
+                    <option value="3rd Co-Applicant">3rd Co-Applicant</option>
+                    <option value="4th Co-Applicant">4th Co-Applicant</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label"><b>Relation</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="relation_1">
+                    <option value="Self">Self</option>
+                    <option value="Husband">Husband</option>
+                    <option value="Wife">Wife</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Son">Son</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-6 col-form-label"><b>Customer Type</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="customerType_1">
+                    <option value="Salaried">Salaried</option>
+                    <option value="Self Employed">Self Employed</option>
+                    <option value="Salaried Professional">Salaried Professional</option>
+                    <option value="Business Professional">Business Professional</option>
+                    <option value="Housewife">Housewife</option>
+                    <option value="Student">Student</option>
+                    <option value="Retired Pensioner">Retired Pensioner</option>
+                    <option value="Retired">Retired</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div><br>
+
+          <div>
+            <button class="btn btn-primary add_button" id="addCustomerButton1" type="button" style="color:white">
+              + Add </button>
+            <hr>
+          </div>
+        </div>
+        <div class="additionalCustomerDetail1">
+        </div>
+
+        <script type="text/javascript">
+          var x = 1;
+          $("#addCustomerButton1").click(function () {
+            alert("One More Customer is Added");
+            x++; //Increment field counter
+            $('.additionalCustomerDetail1').append(`
+                           <div class="customerDetails1${x}">
+                            <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-8 col-form-label"><b>Customer Name</b></label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="name_1" placeholder="Enter Full Name">
+            </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label><b>Income Holder</b></label>
+            <div class="col-sm-9">
+              <select class="form-control" name="incomeHolder_1">
+                <option value="yes">Yes</option>
+                        <option value="no">No</option>
+              </select>
+            </div>
+            </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="col-sm-6 col-form-label"><b>Property Owner</b></label>
+            <div class="col-sm-9">
+              <select class="form-control" name="propertyOwner_1">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>            
+            </div>
+            </div>
+            </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <label class="col-sm-8 col-form-label"><b>Applicant Type</b></label>
+              <div class="col-sm-9">
+                <select class="form-control" name="applicantType_1">
+                  <option value="Applicant">Applicant</option>
+                        <option value="1st Co-Applicant">1st Co-Applicant</option>
+                        <option value="2nd Co-Applicant">2nd Co-Applicant</option>
+                        <option value="3rd Co-Applicant">3rd Co-Applicant</option>
+                        <option value="4th Co-Applicant">4th Co-Applicant</option>
+                </select>                   
+              </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label"><b>Relation</b></label>
+              <div class="col-sm-9">
+                <select class="form-control" name="relation_1">
+                  <option value="Self">Self</option>
+                        <option value="Husband">Husband</option>
+                        <option value="Wife">Wife</option>
+                        <option value="Daughter">Daughter</option>
+                        <option value="Son">Son</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Sister">Sister</option>
+                </select>
+              </div>
+              </div>
+              </div>
+  
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <label class="col-sm-6 col-form-label"><b>Customer Type</b></label>
+              <div class="col-sm-9">
+                <select class="form-control" name="customerType_1">
+                  <option value="Salaried">Salaried</option>
+                        <option value="Self Employed">Self Employed</option>
+                        <option value="Salaried Professional">Salaried Professional</option>
+                        <option value="Business Professional">Business Professional</option>
+                        <option value="Houewife">Houewife</option>
+                        <option value="Student">Student</option>
+                        <option value="Retired Pensioner">Retired Pensioner</option>
+                        <option value="Retired">Retired</option>
+                </select>            
+              </div>
+              </div>
+              </div>
+              </div><br>  
+                  <div style="text-align:left">
+                  <button class="btn btn-primary mr-3 removeCustomerDetails1${x}Button" onclick="removeCustomerDetail1('customerDetails1${x}')" >
+                      Remove 
+                  </button><hr>
+                  </div>
+          </div>
+           <br>
+           
+                      `); //Add field html
+          });
+          function removeCustomerDetail1(parentclass) {
+            alert("Do You Want to Remove Customer Details?")
+            $("." + `${parentclass}`).remove();
+          }         
+        </script>
+
+
+    </div>
+
+
+    <div style="text-align:center">
+      <button class="btn btn-primary mr-3" name="cancel" type="submit">CANCEL</button>
+      <button class="btn btn-primary mr-3" name="save" type="submit">SAVE & SUBMIT</button>
+      <button class="btn btn-primary mr-3" name="next" type="submit">NEXT</button>
+
+    </div>
+    </form>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

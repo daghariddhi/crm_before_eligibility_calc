@@ -1,0 +1,52 @@
+{%extends 'master/navbar.html'%} {% block title%}status{% endblock %} {% block body %} {% load static %}
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <title>Profession Details</title>
+    <style>
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            margin-right: -20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000;
+            /* margin -100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-body">
+        <h4 class="card-title text-center"> <b>Add Profession Details</b></h4><br>
+        <div class="container">
+            <form class=" form-container" action={% url 'Profession_form' %} method="POST">
+                {% csrf_token %}
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label"><b>Profession</b></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="Profession">
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+
+                <div style="text-align:center">
+                    <button class="btn btn-primary mr-3" type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+{% endblock %}

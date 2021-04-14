@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #00171f
+        }
+        
+        h1 {
+            color: #ffffff;
+            background-color: #003459;
+        }
+        
+        form {
+            display: grid;
+            padding: 1em;
+            background: #ffffff;
+            border: 1px solid #c1c1c1;
+            margin: 2rem auto 0 auto;
+            max-width: 600px;
+            padding: 1em;
+        }
+        /* Full-width inputs */
+        
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        /* Set a style for all buttons */
+        
+        button {
+            background-color: #007ea7;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        /* Add a hover effect for buttons */
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        /* Extra style for the cancel button (red) */
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #003459;
+        }
+        /* Add padding to containers */
+        
+        .container {
+            padding: 16px;
+        }
+        /* The "Forgot password" text */
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+            
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack(){
+        window.history.forward();    
+        }
+    </script>
+    <h1 align="center">
+        <I>Creative Finserve</I>
+    </h1>
+</head>
+
+<body>
+    <form action='login' method="post">
+        {% csrf_token %}
+        <h2 align="center">
+            <b>Login to Creative Finserve</b>
+        </h2>
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+
+            <button type="submit">Login</button>
+            <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw"> <a href="reset_password">Forgot password?</a></span>
+            <br>
+            <span class="psw"> <a href="forgot_uname">Forgot Username?</a></span>
+        </div>
+    </form>
+</body>
+
+</html>

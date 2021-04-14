@@ -1,0 +1,1874 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="format-detection" content="telephone=no" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/css/shards.min.css" />
+        <link rel="stylesheet" href="static/css/animate.min.css" />
+        <link
+            rel="stylesheet"
+            href="static/font-awesome/css/font-awesome.min.css"
+        />
+        <link rel="stylesheet" href="static/css/home.css" />
+        <link rel="stylesheet" href="static/css/common.css" />
+        <link rel="stylesheet" href="static/css/animation.css" />
+    </head>
+
+    <body>
+        <!-- whatsapp icon -->
+        <a class="floating-button" href="">
+            <i class="fa fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+        </a>
+        <!-- navbar -->
+        <header class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">
+                    <img
+                        height="30"
+                        src="static/images/cf-logo - Copy.png"
+                        class="align-center img-responsive brand-logo1"
+                        alt=""
+                    />
+                    <img
+                        height="30"
+                        src="static/images/cf-logo.png"
+                        class="align-center img-responsive brand-logo2"
+                        alt=""
+                    />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link ml-2" href="#"
+                                ><strong>Home</strong></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ml-2" href="#"
+                                ><strong>About Us</strong></a
+                            >
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle ml-2"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                ><strong>Services</strong>
+                            </a>
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <a class="dropdown-item" href="#"
+                                    >Know your Eligibility</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >Free Consultation</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >Join as a Partner</a
+                                >
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ml-2" href="#"
+                                ><strong>Contact Us</strong></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ml-2" href="#"
+                                ><strong>Blog</strong></a
+                            >
+                        </li>
+                        <li class="nav-item dropdown d-block d-lg-none">
+                            <a
+                                class="nav-link dropdown-toggle ml-2"
+                                href="#"
+                                id="moreDropdown"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                <strong>More</strong>
+                            </a>
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="moreDropdown"
+                                style="height: 200px; overflow-y: scroll;"
+                            >
+                                <a class="dropdown-item" href="#">HOME</a>
+                                <a class="dropdown-item" href="#">ABOUT US</a>
+                                <a class="dropdown-item" href="#">BLOG</a>
+                                <a class="dropdown-item" href="#"
+                                    >JOIN AS A PARTNER</a
+                                >
+                                <a class="dropdown-item" href="#">SERVICES</a>
+                                <a class="dropdown-item" href="#"
+                                    >APPLY FOR A LOAN</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >GET INSURANCE</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >BOOK A PROPERTY</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >CALCULATORS</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    >DOWNLOAD CHECKLIST</a
+                                >
+                                <a class="dropdown-item" href="#">CONTACT US</a>
+                            </div>
+                        </li>
+                        {% comment %} {% if not request.user.username %} {% endcomment %}
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link btn btn-info text-white font-weight-bold ml-2"
+                                    type="button"
+                                    href="{% url 'register' %}"
+                                >
+                                    Register
+                                </a>
+                            </li>
+                        {% comment %} {% endif %} {% endcomment %}
+                    
+                    {% comment %} <ul class="nav navbar-nav navbar-right"> {% endcomment %}
+                       {% comment %} {% if  request.user.username %}
+                        <li class="nav-item mr-5">
+                            <a class="nav-link" href="{% url 'logout' %}">
+                                <i
+                                    class="fa btn btn-info mr-2 row align-self-center"
+                                    aria-hidden="true"
+                                ><strong>Logout</strong></i>
+                            </a>
+                        </li> {% endcomment %}
+                        <li class="nav-item">
+                                <a
+                                    class="nav-link btn btn-info text-white font-weight-bold ml-2"
+                                    type="button"
+                                    href="{% url 'login' %}"
+                                >
+                                    Login
+                                </a>
+                            </li>
+                         </ul>   
+                        
+                        {% comment %} {% else %} {% endcomment %}
+                        {% comment %} <li class="nav-item mr-5">
+                            <a class="nav-link" href="{% url 'login' %}">
+                                <i
+                                    class="fa btn btn-info mr-2 row align-self-center"
+                                    aria-hidden="true"
+                                ><strong>Login</strong></i>
+                            </a>
+                        </li> {% endcomment %}
+                        {% comment %} <li class="nav-item">
+                                <a
+                                    class="nav-link btn btn-info text-white font-weight-bold ml-2"
+                                    type="button"
+                                    href="{% url 'register' %}"
+                                >
+                                    Register
+                                </a>
+                            </li> {% endcomment %}
+                            
+                        {% comment %} {% endif %} {% endcomment %}
+                        <ul>
+                        <li class="nav-item mr-5">
+                            <a class="nav-link" href="tel:8828824242">
+                                <i
+                                    class="fa fa-phone mr-2 row align-self-center"
+                                    aria-hidden="true"
+                                ></i>
+                                <strong>8828824142</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container-icon d-none d-lg-block">
+                    <span class="menu-icon" id="menu-icon" onclick="openMenu()">
+                        <i class="fa fa-align-justify fa-2x"></i>
+                    </span>
+                </div>
+                <div class="menu-container" id="navbar">
+                    <span
+                        class="close-menu"
+                        id="close-icon"
+                        onclick="closeMenu()"
+                        ><i class="fa fa-times fa-2x"></i
+                    ></span>
+                    <div class="menu-content">
+                        <a href="#">HOME</a>
+                        <a href="#">ABOUT US</a>
+                        <a href="#">BLOG</a>
+                        {% if not request.user.username %}
+                            <a href="{% url 'register' %}"> A PARTNER </a>
+                        {% endif %}
+                        <a href="#">SERVICES</a>
+                        <a href="#">APPLY FOR A LOAN</a>
+                        <a href="#">GET INSURANCE</a>
+                        <a href="#">BOOK A PROPERTY</a>
+                        <a href="#">CALCULATORS</a>
+                        <a href="#">DOWNLOAD CHECKLIST</a>
+                        <a href="#">CONTACT US</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- carousel -->
+        <section>
+            <div class="landing">
+                <div class="container h-100">
+                    <div
+                        class="row h-100 align-items-center justify-content-center carousel-caption text-left pt-lg-0 pt-5 landing-anime"
+                    >
+                        <div class="col-md-12 col-lg-7">
+                            <h1
+                                class="landing-title text-white pt-5 pt-lg-0 font-weight-bold"
+                            >
+                                Demo Text one
+                            </h1>
+                            <p class="text-white landing-subtitle ml-2">
+                                long lorem epsum dolor one
+                            </p>
+                            <div
+                                class="row no-gutters"
+                                style="max-width: 600px;"
+                            >
+                                <div class="col-md-4 mb-2">
+                                    <select
+                                        class="custom-select"
+                                        name="firstselect"
+                                        id="firstselect"
+                                        aria-label="Example select with button addon"
+                                        style="
+                                            border-top-right-radius: 0;
+                                            border-bottom-right-radius: 0;
+                                        "
+                                    >
+                                        <option value="base" selected disabled
+                                            >Choose...</option
+                                        >
+                                        <option value="Eligibility"
+                                            >Check My Loan Eligibility</option
+                                        >
+                                        <option value="Debt"
+                                            >Are you in Debt?</option
+                                        >
+                                        <option value="Insurance"
+                                            >Get Insurance</option
+                                        >
+                                        <option value="Property"
+                                            >Book a Property</option
+                                        >
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-2">
+                                    <select
+                                        class="custom-select"
+                                        name="secondselect"
+                                        id="secondselect"
+                                        aria-label="Example select with button addon"
+                                        style="
+                                            border-top-left-radius: 0;
+                                            border-bottom-left-radius: 0;
+                                        "
+                                    >
+                                        <option value="" selected disabled
+                                            >Choose...</option
+                                        >
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mb-2 ml-md-2">
+                                    <button
+                                        class="btn btn-info btn-block"
+                                        type="button"
+                                        id="btnSubmit"
+                                    >
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="row mt-5 text-md-left text-center no-gutters justify-content-center justify-content-sm-start"
+                            >
+                                <div class="row col-12">
+                                    <div class="col-sm-4 mb-2">
+                                        <a
+                                            href=""
+                                            class="btn btn-light btn-block font-weight-bold"
+                                        >
+                                            <span
+                                                ><i
+                                                    class="fa fa-home mb-1"
+                                                ></i></span
+                                            ><br />
+                                            Real Estate
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-4 mb-2">
+                                        <a
+                                            href=""
+                                            class="btn btn-light btn-block font-weight-bold"
+                                        >
+                                            <span
+                                                ><i
+                                                    class="fa fa-home mb-1"
+                                                ></i></span
+                                            ><br />
+                                            Insurance
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-4 mb-2">
+                                        <a
+                                            href=""
+                                            class="btn btn-light btn-block font-weight-bold"
+                                        >
+                                            <span
+                                                ><i
+                                                    class="fa fa-home mb-1"
+                                                ></i></span
+                                            ><br />
+                                            Loan
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 d-none d-lg-block">
+                            <img
+                                class="landing-vector"
+                                src="static/images/gamer-colour.svg"
+                                alt="First slide"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cards -->
+        <section>
+            <div class="container">
+                <div style="padding: 10vh 0;">
+                    <div
+                        class="section-title col-lg-10 ml-auto mr-auto text-center text-anime-landing"
+                    >
+                        <h1 class="mb-4">Contact Us For Financial Aid</h1>
+                        <p>
+                            We offer the full spectrum of Financial Services to
+                            help everyone from all sphere of life. At Creative
+                            Finserve, we’re dedicated in helping to solve their
+                            toughest challenges and providing a one stop
+                            financial Solutions with expert advice from Loans,
+                            Insurance to Real Estate all under one roof.
+                        </p>
+                    </div>
+                    <div class="example col-md-12 ml-auto mr-auto">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <div class="card h-100 services-anime">
+                                    <i
+                                        class="card-img-top fa fa-balance-scale fa-3x"
+                                        style="
+                                            text-align: center;
+                                            padding: 50px;
+                                            padding-top: 80px;
+                                        "
+                                    ></i>
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">
+                                            Know your Eligibility
+                                        </h4>
+                                        <h6
+                                            class="card-subtitle text-muted mb-2"
+                                        >
+                                            Want a Free Consultation
+                                        </h6>
+                                        <p class="card-text text-justify">
+                                            Irrespective of your occupation or
+                                            profession, you should check your
+                                            eligibility before approaching a
+                                            bank. Check your eligibility with
+                                            the help of a few clicks. Do
+                                            remember, the eligibility features
+                                            varies from profile and bank to
+                                            bank...
+                                        </p>
+                                        <div class="text-right">
+                                            <a href="#" class="btn btn-info"
+                                                >Read More</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <div class="card h-100 services-anime">
+                                    <i
+                                        class="card-img-top fa fa-money fa-3x"
+                                        style="
+                                            text-align: center;
+                                            padding: 50px;
+                                            padding-top: 80px;
+                                        "
+                                    ></i>
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">
+                                            Are you in Debt?
+                                        </h4>
+                                        <h6
+                                            class="card-subtitle text-muted mb-2"
+                                        >
+                                            Want a Free Consultation
+                                        </h6>
+                                        <p class="card-text text-justify">
+                                            Debt management programs help you
+                                            manage your debt by consolidating
+                                            your accounts into one manageable
+                                            monthly payment. As a result, you’ll
+                                            be able to consolidate all your
+                                            EMI's into Single EMI. You’ll enjoy
+                                            reduced interest and an improved...
+                                        </p>
+                                        <div class="text-right">
+                                            <a href="#" class="btn btn-info"
+                                                >Read More</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <div class="card h-100 services-anime">
+                                    <i
+                                        class="card-img-top fa fa-rupee fa-3x"
+                                        style="
+                                            text-align: center;
+                                            padding: 50px;
+                                            padding-top: 80px;
+                                        "
+                                    ></i>
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">
+                                            Join as a Partner
+                                        </h4>
+                                        <h6
+                                            class="card-subtitle text-muted mb-2"
+                                        >
+                                            Want a Free Consultation
+                                        </h6>
+                                        <p class="card-text text-justify">
+                                            Join the Creative Finserve Partner
+                                            Network As a partner, you’ll gain
+                                            instant access to exclusive
+                                            Marketing Materials, CRM Software
+                                            and App. Make Mobile your Office and
+                                            view all the status at the click of
+                                            your fingertips.Join the fastest
+                                            growing...
+                                        </p>
+                                        <div class="text-right">
+                                            <a href="#" class="btn btn-info"
+                                                >Read More</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- achievement -->
+        <section style="background-color: #00171f;">
+            <div class="container">
+                <div class="row mb-5 text-center text-white p-4">
+                    <div class="col-md-4 achievement-anime">
+                        <span style="font-size: 70px; color: #00a8e8;"
+                            ><i class="fa fa-clock-o"></i
+                        ></span>
+                        <h4 style="color: white;">Awards</h4>
+                        <p>
+                            Awarded as ‘Best Tech Trend Setter'. awarded as the
+                            “Best Tech Trend Setter in the emerging 2020. This
+                            award has helped us to add a booster and to act more
+                            prudently to upscale services more digitally.
+                        </p>
+                    </div>
+                    <div class="col-md-4 achievement-anime">
+                        <span style="font-size: 70px; color: #00a8e8;"
+                            ><i class="fa fa-weixin"></i
+                        ></span>
+                        <h4 style="color: white;">Partner Program</h4>
+                        <p>
+                            Lifetime Earning Opportunities created with multiple
+                            Financial Services under one roof. 2000+ Partners
+                            enrolled till date and earning a passive Income.
+                        </p>
+                    </div>
+                    <div class="col-md-4 achievement-anime">
+                        <span style="font-size: 70px; color: #00a8e8;"
+                            ><i class="fa fa-user"></i
+                        ></span>
+                        <h4 style="color: white;">Customers</h4>
+                        <p>
+                            15000+ Happy & satisfied customers served across PAN
+                            India.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Services -->
+        <section>
+            <div class="container pt-5 mb-5">
+                <div
+                    class="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center text-anime-loans"
+                >
+                    <h1>Loans</h1>
+                    <p>
+                        In finance, a loan is the lending of money by one or
+                        more individuals, organizations, or other entities to
+                        other individuals, organizations etc. Take a look at all
+                        types of loans :
+                    </p>
+                </div>
+                <div
+                    class="row row-cols-1 row-cols-md-2 justify-content-center"
+                >
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            Personal Loan
+                                        </h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            Unsecured Personal Loan is issued
+                                            and supported only by the borrower's
+                                            credit worthiness, rather than by a
+                                            type of collateral. An Unsecured
+                                            Personal Loan is one that is
+                                            obtained without...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            Business Loan
+                                        </h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            Unsecured Business Loan are
+                                            available to small and medium
+                                            enterprises for all your working
+                                            capital needs. Capital is a vital
+                                            component for the success of
+                                            commerce today. Irrespective of...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Home Loan</h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            Home Loan is offered to individuals
+                                            who wish to purchase or construct a
+                                            house. The property is mortgaged to
+                                            the lender as a security till the
+                                            repayment of the Home Loan is done.
+                                            The bank...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            Loan Against Property
+                                        </h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            The term 'loan against property'
+                                            refers to a situation in which the
+                                            borrower takes a loan from a bank or
+                                            financial institution where the
+                                            security for the loan is a property
+                                            that is owned by...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">MSME Loans</h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            Finance is the key to success in any
+                                            business, and this holds especially
+                                            true for MSMEs. Small businesses
+                                            require funds to buy equipment,
+                                            refill inventory, expand operations
+                                            and...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Insurance</h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            Insurance is a means of protection
+                                            from financial loss. It is a form of
+                                            risk management, primarily used to
+                                            hedge against the risk of a
+                                            contingent or uncertain loss. An
+                                            entity which provides...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div
+                            class="h-100 card loans-anime"
+                            style="max-width: 540px;"
+                        >
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4">
+                                    <img
+                                        src="static/images/mobile-post-colour.svg"
+                                        class="card-img p-3"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Real Estate</h4>
+                                        <p class="card-text d-none d-lg-block">
+                                            Real estate is property consisting
+                                            of land and the buildings on it,
+                                            along with its natural resources
+                                            such as crops, minerals or water;
+                                            immovable property of this nature;
+                                            an interest...
+                                            <a href="#" class="stretched-link"
+                                                >Read More</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Step for better understanding-->
+        <section>
+            <div class="container pt-5 mb-5">
+                <div
+                    class="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center text-anime-steps"
+                >
+                    <h1 class="mb-4">Steps/Guide</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Voluptatem molestiae ratione rerum natus repellat
+                        mollitia, magnam, ipsa distinctio, tenetur minus
+                        exercitationem provident
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div
+                            class="card p-4 steps-anime"
+                            style="max-width: 1080px;"
+                        >
+                            <div class="row">
+                                <div class="col-sm-1 text-center">
+                                    <div
+                                        class="nav flex-column nav-pills"
+                                        id="v-pills-tab"
+                                        role="tablist"
+                                        aria-orientation="vertical"
+                                    >
+                                        <a
+                                            class="nav-link active mb-4"
+                                            id="v-pills-home-tab"
+                                            data-toggle="pill"
+                                            href="#v-pills-home"
+                                            role="tab"
+                                            aria-controls="v-pills-home"
+                                            aria-selected="true"
+                                            >1</a
+                                        >
+                                        <a
+                                            class="nav-link mb-4"
+                                            id="v-pills-profile-tab"
+                                            data-toggle="pill"
+                                            href="#v-pills-profile"
+                                            role="tab"
+                                            aria-controls="v-pills-profile"
+                                            aria-selected="false"
+                                            >2</a
+                                        >
+                                        <a
+                                            class="nav-link mb-4"
+                                            id="v-pills-messages-tab"
+                                            data-toggle="pill"
+                                            href="#v-pills-messages"
+                                            role="tab"
+                                            aria-controls="v-pills-messages"
+                                            aria-selected="false"
+                                            >3</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div
+                                        class="tab-content"
+                                        id="v-pills-tabContent"
+                                    >
+                                        <div
+                                            class="tab-pane fade show active"
+                                            id="v-pills-home"
+                                            role="tabpanel"
+                                            aria-labelledby="v-pills-home-tab"
+                                        >
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p>
+                                                        Real Estate is India's
+                                                        rapidly developing
+                                                        business segment and
+                                                        multiple financial
+                                                        institutions including
+                                                        banking and non banking
+                                                        are offering Loans for
+                                                        New Construction.
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <img
+                                                        class="img-fluid rounded"
+                                                        src="static/images/1.jpg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="tab-pane fade"
+                                            id="v-pills-profile"
+                                            role="tabpanel"
+                                            aria-labelledby="v-pills-profile-tab"
+                                        >
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p>
+                                                        Loan sanctioned to
+                                                        construct or develop a
+                                                        new real estate project
+                                                        including both
+                                                        residential as well as
+                                                        commercial is known as
+                                                        Loan for New
+                                                        Construction. An
+                                                        individual or a firm or
+                                                        company engaged in the
+                                                        business of real estate
+                                                        development or
+                                                        construction (Builder)
+                                                        can avail this loan.
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <img
+                                                        class="img-fluid rounded"
+                                                        src="static/images/2.jpg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="tab-pane fade"
+                                            id="v-pills-messages"
+                                            role="tabpanel"
+                                            aria-labelledby="v-pills-messages-tab"
+                                        >
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <p>
+                                                        Project finance is the
+                                                        long term financing of
+                                                        infrastructure based
+                                                        upon the projected cash
+                                                        flows of the project
+                                                        rather than the balance
+                                                        sheets of the project
+                                                        sponsors. The loans are
+                                                        most commonly
+                                                        non-recourse loans,
+                                                        which are secured by the
+                                                        project static and paid
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <img
+                                                        class="img-fluid rounded"
+                                                        src="static/images/3.jpg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- calculator Link  -->
+        <section style="background-color: #00171f;">
+            <div class="container py-3 mt-5 mb-5">
+                <div class="row py-5">
+                    <div class="col-sm-8 mb-2 text-anime-cal">
+                        <h2 class="text-white text-sm-right text-center">
+                            Check Out our Calculator
+                        </h2>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-sm-left text-center cal-anime">
+                            <button type="button" class="btn btn-info ml-sm-4">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Ask your questions-->
+        <section>
+            <div class="container pt-5 mb-5">
+                <div class="row">
+                    <div class="col">
+                        <div class="card faq-anime">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-6 mb-4 mb-sm-0">
+                                        <h4 class="card-title text-center mb-4">
+                                            Frequently Asked Questions
+                                        </h4>
+                                        <button class="accordion">
+                                            Accordian #1
+                                        </button>
+                                        <div class="accordion-content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet,
+                                                consectetur adipisicing elit.
+                                                Quas deleniti molestias
+                                                necessitatibus quaerat quos
+                                                incidunt! Quas officiis repellat
+                                                dolore omnis nihil quo, ratione
+                                                cupiditate! Sed, deleniti,
+                                                recusandae! Animi, sapiente,
+                                                nostrum?
+                                            </p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet,
+                                                consectetur adipisicing elit.
+                                                Quas deleniti molestias
+                                                necessitatibus quaerat quos
+                                                incidunt! Quas officiis repellat
+                                                dolore omnis nihil quo, ratione
+                                                cupiditate! Sed, deleniti,
+                                                recusandae! Animi, sapiente,
+                                                nostrum?
+                                            </p>
+                                        </div>
+
+                                        <hr />
+                                        <button class="accordion">
+                                            Accordian #2
+                                        </button>
+                                        <div class="accordion-content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet,
+                                                consectetur adipisicing elit.
+                                                Quas deleniti molestias
+                                                necessitatibus quaerat quos
+                                                incidunt! Quas officiis repellat
+                                                dolore omnis nihil quo, ratione
+                                                cupiditate! Sed, deleniti,
+                                                recusandae! Animi, sapiente,
+                                                nostrum?
+                                            </p>
+                                        </div>
+                                        <hr />
+
+                                        <button class="accordion">
+                                            Accordian #3
+                                        </button>
+                                        <div class="accordion-content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet,
+                                                consectetur adipisicing elit.
+                                                Quas deleniti molestias
+                                                necessitatibus quaerat quos
+                                                incidunt! Quas officiis repellat
+                                                dolore omnis nihil quo, ratione
+                                                cupiditate! Sed, deleniti,
+                                                recusandae! Animi, sapiente,
+                                                nostrum?
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 class="card-title text-center mb-4">
+                                            Ask Your Questions
+                                        </h4>
+                                        <div
+                                            class="contactFormContainer container"
+                                        >
+                                            <form
+                                                class="needs-validation mb-4"
+                                                novalidate
+                                                action=""
+                                            >
+                                                <div
+                                                    class="form-group row no-gutters"
+                                                >
+                                                    <legend
+                                                        class="col-sm-3 col-form-label control-label"
+                                                    >
+                                                        Select From
+                                                    </legend>
+                                                    <div class="col-sm-9">
+                                                        <div
+                                                            class="form-check form-check-inline"
+                                                        >
+                                                            <input
+                                                                class="form-check-input radio-inline"
+                                                                type="radio"
+                                                                name="inlineRadioOptions"
+                                                                id="inlineRadio1"
+                                                                value="option1"
+                                                                onclick="display()"
+                                                                required
+                                                            />
+                                                            <label
+                                                                class="form-check-label contol-label"
+                                                                for="inlineRadio1"
+                                                                >Loans</label
+                                                            >
+                                                        </div>
+
+                                                        <div
+                                                            class="form-check form-check-inline"
+                                                        >
+                                                            <input
+                                                                class="form-check-input radio-inline"
+                                                                type="radio"
+                                                                name="inlineRadioOptions"
+                                                                id="inlineRadio2"
+                                                                value="option2"
+                                                                onclick="display()"
+                                                                required
+                                                            />
+                                                            <label
+                                                                class="form-check-label control-label"
+                                                                for="inlineRadio2"
+                                                                >Insurance</label
+                                                            >
+                                                        </div>
+                                                        <div
+                                                            class="form-check form-check-inline"
+                                                        >
+                                                            <input
+                                                                class="form-check-input radio-inline"
+                                                                type="radio"
+                                                                name="inlineRadioOptions"
+                                                                id="inlineRadio3"
+                                                                value="option3"
+                                                                onclick="display()"
+                                                                required
+                                                            />
+                                                            <label
+                                                                class="form-check-label control-label"
+                                                                for="inlineRadio3"
+                                                                >Real
+                                                                Estate</label
+                                                            >
+                                                        </div>
+                                                        <div
+                                                            class="form-check form-check-inline"
+                                                        >
+                                                            <input
+                                                                class="form-check-input radio-inline"
+                                                                type="radio"
+                                                                name="inlineRadioOptions"
+                                                                id="inlineRadio4"
+                                                                value="option4"
+                                                                onclick="display()"
+                                                                required
+                                                            />
+                                                            <label
+                                                                class="form-check-label control-label"
+                                                                for="inlineRadio4"
+                                                                >Debt
+                                                                Consolidation</label
+                                                            >
+                                                        </div>
+                                                        <div
+                                                            class="form-check form-check-inline"
+                                                        >
+                                                            <input
+                                                                class="form-check-input radio-inline"
+                                                                type="radio"
+                                                                name="inlineRadioOptions"
+                                                                id="inlineRadio5"
+                                                                value="option5"
+                                                                onclick="display()"
+                                                                required
+                                                            />
+                                                            <label
+                                                                class="form-check-label control-label"
+                                                                for="inlineRadio5"
+                                                                >Join as a
+                                                                Partner</label
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="option1 d-none"
+                                                    id="o1"
+                                                >
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            class="col-sm-3"
+                                                        ></label>
+                                                        <div class="col-sm-9">
+                                                            <select
+                                                                class="form-control"
+                                                                required
+                                                            >
+                                                                <option
+                                                                    value=""
+                                                                    disabled
+                                                                    >Choose your
+                                                                    Option</option
+                                                                >
+                                                                <option
+                                                                    value="pl"
+                                                                    >PL</option
+                                                                >
+                                                                <option
+                                                                    value="bl"
+                                                                    >BL</option
+                                                                >
+                                                                <option
+                                                                    value="hl"
+                                                                    >HL</option
+                                                                >
+                                                                <option
+                                                                    value="lap"
+                                                                    >LAP</option
+                                                                >
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="option2 d-none"
+                                                    id="o2"
+                                                >
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            class="col-sm-3"
+                                                        ></label>
+                                                        <div class="col-sm-9">
+                                                            <select
+                                                                class="form-control"
+                                                                required
+                                                            >
+                                                                <option
+                                                                    value=""
+                                                                    disabled
+                                                                    >Choose your
+                                                                    Option</option
+                                                                >
+                                                                <option
+                                                                    value="gi"
+                                                                    >General
+                                                                    Insurance</option
+                                                                >
+                                                                <option
+                                                                    value="li"
+                                                                    >Life
+                                                                    Insurance</option
+                                                                >
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="option3 d-none"
+                                                    id="o3"
+                                                >
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            class="col-sm-3"
+                                                        ></label>
+                                                        <div class="col-sm-9">
+                                                            <select
+                                                                class="form-control"
+                                                                required
+                                                            >
+                                                                <option
+                                                                    value=""
+                                                                    disabled
+                                                                    >Choose your
+                                                                    Option</option
+                                                                >
+                                                                <option
+                                                                    value="l"
+                                                                    >Location</option
+                                                                >
+                                                                <option
+                                                                    valu="a1"
+                                                                    >area
+                                                                    1</option
+                                                                >
+                                                                <option
+                                                                    value="a2"
+                                                                    >area
+                                                                    2</option
+                                                                >
+                                                                <option
+                                                                    value="a3"
+                                                                    >area
+                                                                    3</option
+                                                                >
+                                                                <option
+                                                                    value="a4"
+                                                                    >area
+                                                                    4</option
+                                                                >
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="option4 d-none"
+                                                    id="o4"
+                                                >
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            class="col-sm-3"
+                                                        ></label>
+                                                        <div class="col-sm-9">
+                                                            <div
+                                                                class="custom-file"
+                                                            >
+                                                                <input
+                                                                    type="file"
+                                                                    class="custom-file-input"
+                                                                    id="customFile"
+                                                                />
+                                                                <label
+                                                                    class="custom-file-label control-label"
+                                                                    for="customFile"
+                                                                    >Choose
+                                                                    file</label
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="option5 d-none"
+                                                    id="o5"
+                                                >
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            class="col-sm-3"
+                                                        ></label>
+                                                        <div class="col-sm-9">
+                                                            <button
+                                                                type="button"
+                                                                class="btn btn-info"
+                                                            >
+                                                                Join as a
+                                                                Partner
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="" id="no-join-form">
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            for="validationCustom01"
+                                                            class="col-sm-3 col-form-label control-label"
+                                                            >Name</label
+                                                        >
+                                                        <div class="col-sm-9">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="validationCustom01"
+                                                                placeholder=" Name"
+                                                                required
+                                                            />
+                                                            <div
+                                                                class="invalid-feedback"
+                                                            >
+                                                                Please Fill out
+                                                                This Field
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            for="validationCustom03"
+                                                            class="col-sm-3 col-form-label contol-label"
+                                                            >Email</label
+                                                        >
+                                                        <div class="col-sm-9">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="validationCustom03"
+                                                                placeholder="Email-address"
+                                                                required
+                                                            />
+                                                            <div
+                                                                class="invalid-feedback"
+                                                            >
+                                                                Please Fill out
+                                                                This Field
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            for="validationCustom04"
+                                                            class="col-sm-3 col-form-label control-label"
+                                                            >Phone Number</label
+                                                        >
+                                                        <div class="col-sm-9">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="validationCustom04"
+                                                                placeholder="Phone Number"
+                                                                required
+                                                            />
+                                                            <div
+                                                                class="invalid-feedback"
+                                                            >
+                                                                Please Fill out
+                                                                This Field
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            for="validationCustom06"
+                                                            class="col-sm-3 col-form-label control-label"
+                                                            >Location</label
+                                                        >
+                                                        <div class="col-sm-9">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="validationCustom06"
+                                                                placeholder="Location"
+                                                                required
+                                                            />
+                                                            <div
+                                                                class="invalid-feedback"
+                                                            >
+                                                                Please Fill out
+                                                                This Field
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            for="validationCustom07"
+                                                            class="col-sm-3 col-form-label control-label"
+                                                            >Pin Code</label
+                                                        >
+                                                        <div class="col-sm-9">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="validationCustom07"
+                                                                placeholder="Pin Code"
+                                                                required
+                                                            />
+                                                            <div
+                                                                class="invalid-feedback"
+                                                            >
+                                                                Please Fill out
+                                                                This Field
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="form-group row no-gutters"
+                                                    >
+                                                        <label
+                                                            for="formq"
+                                                            class="col-sm-3 col-form-label control-label"
+                                                            >Remark</label
+                                                        >
+                                                        <div class="col-sm-9">
+                                                            <textarea
+                                                                class="form-control"
+                                                                placeholder=""
+                                                                row="6"
+                                                                required
+                                                            ></textarea>
+                                                            <div
+                                                                class="invalid-feedback"
+                                                            >
+                                                                Please Fill out
+                                                                This Field
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-info float-right"
+                                                    >
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- counters -->
+        <section style="background-color: #00171f;">
+            <div class="container pt-5 mb-5">
+                <div class="row text-center py-5">
+                    <div class="col-md-3">
+                        <i
+                            class="fa fa-check-square-o fa-5x mb-4 counter-icon counter-anime"
+                            aria-hidden="true"
+                        ></i>
+                        <h2 class="count text-white">10000</h2>
+                        <p class="text-white">demo text</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i
+                            class="fa fa-group fa-5x mb-4 counter-icon counter-anime"
+                            aria-hidden="true"
+                        ></i>
+                        <h2 class="count text-white">10000</h2>
+                        <p class="text-white">demo text</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i
+                            class="fa fa-phone fa-5x mb-4 counter-icon counter-anime"
+                            aria-hidden="true"
+                        ></i>
+                        <h2 class="count text-white">10000</h2>
+                        <p class="text-white">demo text</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i
+                            class="fa fa-bank fa-5x mb-4 counter-icon counter-anime"
+                            aria-hidden="true"
+                        ></i>
+                        <h2 class="count text-white">10000</h2>
+                        <p class="text-white">demo text</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <div class="container pt-5 mb-5">
+            <div class="testimonials section">
+                <div
+                    class="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center text-anime-testimonial"
+                >
+                    <h1 class="mb-5">What Our Customers Say</h1>
+                </div>
+                <div class="row py-5">
+                    <div
+                        class="col-md-4 testimonial text-center testimonial-anime"
+                    >
+                        <div
+                            class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
+                        >
+                            <img
+                                src="static/images/avatar-1.jpeg"
+                                class="w-100"
+                                alt="Testimonial Avatar"
+                            />
+                        </div>
+                        <h5 class="mb-1">Osbourne Tranter</h5>
+                        <span class="text-muted d-block mb-2"
+                            >CEO at Megacorp</span
+                        >
+                        <p>
+                            Vivamus quis ex mattis, gravida erat a, iaculis
+                            urna. Proin ac eleifend tortor. Nunc in augue eget
+                            enim venenatis viverra.
+                        </p>
+                    </div>
+                    <div
+                        class="col-md-4 testimonial text-center testimonial-anime"
+                    >
+                        <div
+                            class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
+                        >
+                            <img
+                                src="static/images/avatar-2.jpeg"
+                                class="w-100"
+                                alt="Testimonial Avatar"
+                            />
+                        </div>
+                        <h5 class="mb-1">Darrin Ollie</h5>
+                        <span class="text-muted d-block mb-2"
+                            >CEO at Megacorp</span
+                        >
+                        <p>
+                            Nullam eu ligula facilisis, commodo velit non,
+                            vulputate dolor. Aenean congue euismod vestibulum.
+                        </p>
+                    </div>
+                    <div
+                        class="col-md-4 testimonial text-center testimonial-anime"
+                    >
+                        <div
+                            class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
+                        >
+                            <img
+                                src="static/images/avatar-3.jpeg"
+                                class="w-100"
+                                alt="Testimonial Avatar"
+                            />
+                        </div>
+                        <h5 class="mb-1">Quinton Bruce</h5>
+                        <span class="text-muted d-block mb-2"
+                            >CEO at Megacorp</span
+                        >
+                        <p>
+                            Aenean imperdiet ultrices tortor id convallis. Donec
+                            id metus magna. Morbi pretium odio faucibus blandit
+                            gravida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer section -->
+        <section>
+            <footer style="background-color: #00171f;">
+                <div class="pt-5 container text-white footer-anime">
+                    <div
+                        class="pb-4 row justify-content-center text-center text-sm-left no-gutters"
+                    >
+                        <div class="mb-4 col-md-3">
+                            <img
+                                height="40"
+                                src="static/images/cf-logo - Copy.png"
+                                class="align-center img-responsive brand-logo1 mb-4"
+                                alt=""
+                            />
+                            <p>
+                                suport@cfplindia.com <br />
+                                Helpline No.:-8828824242 <br />
+                                Whatsapp:-8828824141
+                            </p>
+                            <div
+                                class="mt-4 row justify-content-center justify-content-sm-start"
+                            >
+                                <div class="col-2">
+                                    <a href="#"
+                                        ><i class="fa fa-twitter"></i
+                                    ></a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#"
+                                        ><i class="fa fa-facebook-f"></i
+                                    ></a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#"
+                                        ><i class="fa fa-linkedin"></i
+                                    ></a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#"
+                                        ><i class="fa fa-instagram"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 col-md-2">
+                            <h5 class="mb-2">Company</h5>
+                            <a href="">Home</a><br />
+                            <a href="">About Us</a><br />
+                            <a href="">Blog</a><br />
+                            <a href="">Join as a Partner</a><br />
+                            <a href="">Contact Us</a><br />
+                            <a href="">Privacy Policy</a><br />
+                            <a href="">Terms and Conditions</a><br />
+                        </div>
+
+                        <div class="mb-4 col-md-2">
+                            <h5 class="mb-2">Services</h5>
+                            <a href="">Apply for a Loan</a><br />
+                            <a href="">Get Insurance</a><br />
+                            <a href="">Book a Property</a><br />
+                            <a href="">Download Checklist</a><br />
+                        </div>
+
+                        <div class="mb-4 col-md-2">
+                            <h5 class="mb-2">Quick Eligibility</h5>
+                            <a href="">Calculators</a><br />
+                        </div>
+                        <div class="mb-4 col-md-3">
+                            <h5 class="mb-2">Download Now</h5>
+                            <p>Join as a Partner for Android - Playstore</p>
+
+                            <p>Join as a Partner for IOS - Apple Store</p>
+                        </div>
+                    </div>
+                    <div class="pb-5 mb-3 copyRightRow row">
+                        <p>Copyright © 2020 All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>
+            <div class="bottomFooter fixed-bottom p-1">
+                <p class="mb-0">
+                    <i class="pr-2 fa fa-phone"></i>Instant Callback | Quick
+                    Inquiry
+                    <i class="pl-2 fa fa-edit"></i>
+                </p>
+            </div>
+        </section>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/shards.min.js"></script>
+        <script src="static/js/jquery.waypoints.min.js"></script>
+        <script src="static/js/jquery.counterup.min.js"></script>
+        <script src="static/js/home.js"></script>
+        <script src="static/js/common.js"></script>
+        <script src="static/js/animation.js"></script>
+        <script>
+            // Disable form submissions if there are invalid fields
+            (function () {
+                "use strict";
+                window.addEventListener(
+                    "load",
+                    function () {
+                        // Get the forms we want to add validation styles to
+                        var forms = document.getElementsByClassName(
+                            "needs-validation"
+                        );
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(
+                            forms,
+                            function (form) {
+                                form.addEventListener(
+                                    "submit",
+                                    function (event) {
+                                        if (form.checkValidity() === false) {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                        }
+                                        form.classList.add("was-validated");
+                                    },
+                                    false
+                                );
+                            }
+                        );
+                    },
+                    false
+                );
+            })();
+        </script>
+        <script>
+            function display() {
+                if (document.getElementById("inlineRadio1").checked) {
+                    if (document.body.contains(document.getElementById("o1"))) {
+                        document
+                            .getElementById("o1")
+                            .classList.remove("d-none");
+                        document.getElementById("o2").classList.add("d-none");
+                        document.getElementById("o3").classList.add("d-none");
+                        document.getElementById("o4").classList.add("d-none");
+                        document.getElementById("o5").classList.add("d-none");
+                        document
+                            .getElementById("no-join-form")
+                            .classList.remove("d-none");
+                    }
+                } else if (document.getElementById("inlineRadio2").checked) {
+                    if (document.body.contains(document.getElementById("o2"))) {
+                        document
+                            .getElementById("o2")
+                            .classList.remove("d-none");
+                        document.getElementById("o1").classList.add("d-none");
+                        document.getElementById("o3").classList.add("d-none");
+                        document.getElementById("o4").classList.add("d-none");
+                        document.getElementById("o5").classList.add("d-none");
+                        document
+                            .getElementById("no-join-form")
+                            .classList.remove("d-none");
+                    }
+                } else if (document.getElementById("inlineRadio3").checked) {
+                    if (document.body.contains(document.getElementById("o3"))) {
+                        document
+                            .getElementById("o3")
+                            .classList.remove("d-none");
+                        document.getElementById("o1").classList.add("d-none");
+                        document.getElementById("o2").classList.add("d-none");
+                        document.getElementById("o4").classList.add("d-none");
+                        document.getElementById("o5").classList.add("d-none");
+                        document
+                            .getElementById("no-join-form")
+                            .classList.remove("d-none");
+                    }
+                } else if (document.getElementById("inlineRadio4").checked) {
+                    if (document.body.contains(document.getElementById("o4"))) {
+                        document
+                            .getElementById("o4")
+                            .classList.remove("d-none");
+                        document.getElementById("o2").classList.add("d-none");
+                        document.getElementById("o3").classList.add("d-none");
+                        document.getElementById("o1").classList.add("d-none");
+                        document.getElementById("o5").classList.add("d-none");
+                        document
+                            .getElementById("no-join-form")
+                            .classList.remove("d-none");
+                    }
+                } else if (document.getElementById("inlineRadio5").checked) {
+                    if (document.body.contains(document.getElementById("o4"))) {
+                        document
+                            .getElementById("o5")
+                            .classList.remove("d-none");
+                        document.getElementById("o2").classList.add("d-none");
+                        document.getElementById("o3").classList.add("d-none");
+                        document.getElementById("o4").classList.add("d-none");
+                        document.getElementById("o1").classList.add("d-none");
+                        document
+                            .getElementById("no-join-form")
+                            .classList.add("d-none");
+                    }
+                } else {
+                    alert("please select any option!");
+                    document
+                        .getElementById("no-join-form")
+                        .classList.remove("d-none");
+                }
+            }
+        </script>
+        <script>
+            $("#firstselect").change(function () {
+                var $dropdown = $(this);
+
+                $.getJSON("data.json", function (data) {
+                    var key = $dropdown.val();
+                    var vals = [];
+
+                    switch (key) {
+                        case "Eligibility":
+                            vals = data.Eligibility.split(",");
+                            break;
+                        case "Debt":
+                            vals = data.Debt.split(",");
+                            break;
+                        case "Insurance":
+                            vals = data.Insurance.split(",");
+                            break;
+                        case "Property":
+                            vals = data.Property.split(",");
+                            break;
+                        case "base":
+                            vals = ["Choose..."];
+                    }
+
+                    var $secondChoice = $("#secondselect");
+                    $secondChoice.empty();
+                    $.each(vals, function (index, value) {
+                        $secondChoice.append("<option>" + value + "</option>");
+                    });
+                });
+            });
+        </script>
+    </body>
+
+</html>

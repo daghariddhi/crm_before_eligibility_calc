@@ -1,0 +1,35 @@
+{%extends 'master/navbar.html'%} {% block title%}StageOfConstruction{% endblock %} {% block body %} {% load static %}
+
+
+<div id="wrapper">
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <div class="container">
+        <h3 class="card-title text-center header"> StageOfConstruction</h3>
+        
+        
+        <form class="form-container" action={% url 'StageOfConstruction_form' %} method="POST">
+            {% csrf_token %}
+            
+            <div class="col-12 md-6 sm-4"> 
+                <label class="col-sm-5 col-form-label"> <b>Stage</b> </label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" name="Stage">
+                    </div>
+            </div>
+            
+            <br>
+            
+                <div style="text-align:center">
+                    
+                    <button class="btn btn-primary mr-3" type="submit">Submit</button>
+        
+                </div>
+            
+        </form>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,38 @@
+.landing-anime,
+.services-anime,
+.achievement-anime,
+.loans-anime,
+.steps-anime,
+.cal-anime,
+.faq-anime,
+.counter-anime,
+.testimonial-anime,
+.footer-anime,
+.text-anime-landing,
+.text-anime-loans,
+.text-anime-steps,
+.text-anime-cal,
+.text-anime-testimonial {
+  opacity: 0;
+}
+
+/* .landing-anime,.services-anime,.achievement-anime,.loans-anime,.steps-anime,.cal-anime,.faq-anime,.counter-anime,.testimonial-anime,.footer-anime,.text-anime  {
+  opacity: 1;
+} */
+
+.landing-anime.animate__animated,
+.services-anime.animate__animated,
+.loans-anime.animate__animated,
+.steps-anime.animate__animated,
+.cal-anime.animate__animated,
+.faq-anime.animate__animated,
+.counter-anime.animate__animated,
+.testimonial-anime.animate__animated,
+.footer-anime.animate__animated,
+.text-anime-landing.animate__animated,
+.text-anime-loans.animate__animated,
+.text-anime-steps.animate__animated,
+.text-anime-cal.animate__animated,
+.text-anime-testimonial.animate__animated {
+  opacity: 1;
+}

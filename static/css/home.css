@@ -1,0 +1,57 @@
+.landing {
+    height: 100vh;
+    background-color: #003459;
+}
+
+button.accordion {
+    width: 100%;
+    background-color: white;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+hr {
+    margin-left: 10px;
+}
+
+button.accordion:after {
+    content: "\f055";
+    font-family: "fontawesome";
+    font-size: 14px;
+    float: right;
+}
+
+button.accordion.is-open:after {
+    content: "\f056";
+}
+
+button.accordion:hover,
+button.accordion.is-open {
+    background-color: #ddd;
+}
+
+.accordion-content {
+    background-color: white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+    margin-left: 20px;
+}
+
+.testimonials .avatar {
+    max-width: 80px;
+    overflow: hidden;
+}
+
+.counter-icon {
+    color: #00a8e8;
+}

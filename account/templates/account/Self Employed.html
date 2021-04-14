@@ -1,0 +1,3272 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <title>Self Employed</title>
+    <style>
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            margin-right: -20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000;
+            /* margin -100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-body ">
+        <h4 class="card-title text-center"> <b>Income Details for Self Employed</b></h4><br>
+        <div class="container">
+            <form class=" form-container" action="Self Employed" method="POST">
+                <!-- {% csrf_token %} -->
+                <!-- <p class="card-description"> Personal info </p> -->
+
+                <!-- <div class="container"> -->
+                <div class="row" align="center">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-5 col-form-label"> <b>Customer Name</b> </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-sm-5 col-form-label"> <b>Applicant Type</b> </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div><br>
+
+                </div>
+                <hr>
+                <script type="text/javascript">
+                    $(function() {
+                        $("#PersonalDetails").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details1").show();
+                            } else {
+                                $("#details1").hide();
+                            }
+                        });
+                    });
+                </script>
+                <div>
+                    <label for="PersonalDetails">
+              <input type="checkbox" id="PersonalDetails" />
+              <b>Personal Details</b>
+          </label>
+                </div>
+                <hr>
+
+                <div class="container" id="details1" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Loan amount required</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>CIBIL Type</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="cibil_type">
+                <option value="Known">Known</option>
+                <option value="Not Known">Not Known</option>
+              </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>CIBIL Score</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Have You Taken any Loan or CC in past</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="loanTaken">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>How Was Your Repayment History</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="repaymentHistory">
+                  <option value="Good">Good</option>
+                  <option value="Bad">Bad</option>
+                </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Default Year</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="defaultYear">
+                  <option value="Last 12 Months">Last 12 Months</option>
+                  <option value="Past">Past</option>
+                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Details About The Default</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Gender</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="gender">
+                                        {% for gender in genders %}
+                                            <option value={{gender.gender}}>{{gender.gender}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>Date Of Birth</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="DD-MM-YY">
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Age</b></label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Retirement Age</b></label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Marital Status</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="maritalStatus">
+                                        {% for maritalstatus in maritalstatues %}
+                                            <option value={{maritalstatus.marital_status}}>{{maritalstatus.marital_status}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Qualification</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="qualification">
+                                        {% for qualification in qualifications %}
+                                            <option value={{qualification.qualification}}>{{qualification.qualification}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Degree (Post Graduate/Others)</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Profession</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="profession">
+                                        {% for profession in professions %}
+                                            <option value={{profession.profession}}>{{profession.profession}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Degree</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="degree">
+                                        {% for degree in degrees %}
+                                            <option value={{degree.degree}}>{{degree.degree}}</option>
+                                        {% endfor %}                       
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Lawyer Type</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="lawyerType">
+                        <option value="Civil">Civil</option>
+                        <option value="Criminal">Criminal</option>            
+                      </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Nationality</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+                                        {% for nationalitie in nationalities %}
+                                            <option value={{nationalitie.nationality}}>{{nationalitie.nationality}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <!-- <input type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Country</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>End-Use</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+
+                <hr>
+                <script type="text/javascript">
+                    $(function() {
+                        $("#ResidenceDetails").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details2").show();
+                            } else {
+                                $("#details2").hide();
+                            }
+                        });
+                    });
+                </script>
+                <div>
+                    <label for="ResidenceDetails">
+              <input type="checkbox" id="ResidenceDetails" />
+              <b>Residence Details</b>
+          </label>
+                </div>
+                <hr>
+
+                <div class="container" id="details2" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Current Residence Type</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+                                        {% for residencetype in residencetypes %}
+                                            <option value={{residencetype.residence_type}}>{{residencetype.residence_type}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <!-- <input type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Current Location</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>State</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <hr>
+                <script type="text/javascript">
+                    $(function() {
+                        $("#CompanyDetails").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details3").show();
+                            } else {
+                                $("#details3").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="CompanyDetails">
+            <input type="checkbox" id="CompanyDetails" />
+           <b> Company Details</b>
+        </label>
+                <hr />
+
+                <div class="container" id="details3" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Company Type</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="reflectionInItr">
+                                        {% for companytype in companytypes %}
+                                            <option value={{companytype.company_type}}>{{companytype.company_type}}</option>
+                                        {% endfor %} 
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Location</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="Input (City)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Company Name</b></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Paid Up Capital</b></label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>How Old is Company</b></label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label><b>Nature of Business of Company</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="NatureOfBusiness">
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Trading">Trading</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="Services">Services</option>
+            <option value="Export">Export</option>
+            <option value="Others">Others</option>
+            
+          </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Designation</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>No. of years in business</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label><b>Current Experience</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label><b>Industry Margin</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label><b>No. of Employees</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>Date of ABB</b></label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="DateOfABB">
+                <option value="5th">5th</option>
+                <option value="10th">10th</option>
+                <option value="15th">15th</option>
+                <option value="20th">20th</option>
+                <option value="25th">25th</option>
+                <option value="30th">30th</option>
+              </select>
+                                    </div>
+                                </div>
+                            </div><br>
+
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group row">
+                                        <label><b>Avg Bank Balance</b></label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function() {
+                        $("#Proprietor").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details4").show();
+                            } else {
+                                $("#details4").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="Proprietor">
+        <input type="checkbox" id="Proprietor" />
+       <b> Proprietor</b>
+    </label>
+                <hr />
+
+                <div class="container" id="details4" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Proprietor</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="reflectionInItr">
+          <option value="Proprietorship">Proprietorship</option>
+          <option value="Partnership">Partnership</option>  
+          <option value="LLP">LLP</option>  
+          <option value="Pvt Ltd">Pvt Ltd</option>  
+          <option value="Public Ltd">Public Ltd</option>  
+          <option value="MNC's">MNC's</option>  
+          <option value="Govt">Govt</option>  
+          <option value="HUF">HUF</option>  
+          <option value="Trust">Trust</option>  
+        </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#IncomeDetails").click(function() {
+                                if ($(this).is(":checked")) {
+                                    $("#details5").show();
+                                } else {
+                                    $("#details5").hide();
+                                }
+                            });
+                        });
+                    </script>
+
+                    <label for="IncomeDetails">
+                  <input type="checkbox" id="IncomeDetails" />
+                <b> Income Details</b>
+                </label><br>
+                    <hr>
+
+                    <div class="container" id="details5" style="display: none">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="AYYear">
+                            <option value="2019-20">2019-20</option>
+                            <option value="2019-18">2019-18</option>
+                            <option value="2017-18">2017-18</option>
+                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Turnover\Gross Receipt</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Gross Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Depreciation</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Interest On Loan</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="AYYear">
+                                    <option value="2019-20">2019-20</option>
+                                    <option value="2019-18">2019-18</option>
+                                    <option value="2017-18">2017-18</option>
+                                  </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-8 col-form-label "><b>AY Year</b></label>
+                                            <div class="col-sm-9 ">
+                                                <select class="form-control " name="AYYear ">
+                                        <option value="2019-20 ">2019-20</option>
+                                        <option value="2019-18 ">2019-18 </option>
+                                        <option value="2018-17 ">2018-17</option>
+                                      </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Loss</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <script type="text/javascript">
+                                    $(function() {
+                                        $("#OtherIncomes").click(function() {
+                                            if ($(this).is(":checked")) {
+                                                $("#details6").show();
+                                            } else {
+                                                $("#details6").hide();
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <label for="OtherIncomes">
+                              <input type="checkbox" id="OtherIncomes" />
+                             <b>Other Incomes</b>
+                          </label><br>
+                                <hr>
+
+                                <div class="container" id="details6" style="display: none">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-8 col-form-label"><b>Rental Income</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"><b>Lessee Type</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="incentivesType">
+                                      <option value="Individual">Individual</option>
+                                      <option value="Corporate">Corporate</option>
+                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Lessee Name</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-8 col-form-label"><b>Rent Amount</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Tenure of Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Tenure Pending</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class=><b>Valid Rent Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="validRentAgreement">
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>If No, Will You Make Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="validRentAgreement">
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>How Old is Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Agreement Type</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="incentivesType">
+                                                        {% for agreementtype in agreementtypes %}
+                                                            <option value={{agreementtype.agreement_type}}>{{agreementtype.agreement_type}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Reflection in Bank Account</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="reflectionInAccount">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                      </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Reflection in ITR</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="reflectionInItr">
+                                              <option value="Yes">Yes</option>
+                                              <option value="No">No</option>
+                                            </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Extension Expected In Years</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group-row">
+                                            <br>
+                                            <div>
+                                                <button class="btn btn-primary add_button" id="addIncomeButton" type="button" style="color:white">
+                                            + Add Other Income </button>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <hr>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("#Partnership").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details7").show();
+                            } else {
+                                $("#details7").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="Partnership">
+                        <input type="checkbox" id="Partnership" />
+                       <b> Partnership</b>
+                    </label>
+                <hr />
+
+                <div class="container" id="details7" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Partnership</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="reflectionInItr">
+                          <option value="Proprietorship">Proprietorship</option>
+                          <option value="Partnership">Partnership</option>  
+                          <option value="LLP">LLP</option>  
+                          <option value="Pvt Ltd">Pvt Ltd</option>  
+                          <option value="Public Ltd">Public Ltd</option>  
+                          <option value="MNC's">MNC's</option>  
+                          <option value="Govt">Govt</option>  
+                          <option value="HUF">HUF</option>  
+                          <option value="Trust">Trust</option>  
+                        </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#IncomeDetails").click(function() {
+                                if ($(this).is(":checked")) {
+                                    $("#details8").show();
+                                } else {
+                                    $("#details8").hide();
+                                }
+                            });
+                        });
+                    </script>
+
+                    <label for="IncomeDetails">
+                                  <input type="checkbox" id="IncomeDetails" />
+                                <b> Income Details</b>
+                                </label><br>
+                    <hr>
+
+                    <div class="container" id="details8" style="display: none">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="AYYear">
+                                            <option value="2019-20">2019-20</option>
+                                            <option value="2019-18">2019-18</option>
+                                            <option value="2017-18">2017-18</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Turnover\Gross Receipt</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Gross Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Depreciation</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Interest On Loan</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Partner Remuneration</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Partners Interest</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="AYYear">
+                                                    <option value="2019-20">2019-20</option>
+                                                    <option value="2019-18">2019-18</option>
+                                                    <option value="2017-18">2017-18</option>
+                                                  </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Partner Remuneration</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Partners Interest</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-8 col-form-label "><b>AY Year</b></label>
+                                            <div class="col-sm-9 ">
+                                                <select class="form-control " name="AYYear ">
+                                                        <option value="2019-20 ">2019-20</option>
+                                                        <option value="2019-18 ">2019-18 </option>
+                                                        <option value="2018-17 ">2018-17</option>
+                                                      </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Loss</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Partner Remuneration</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Partners Interest</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script type="text/javascript">
+                                    $(function() {
+                                        $("#OtherIncomes").click(function() {
+                                            if ($(this).is(":checked")) {
+                                                $("#details9").show();
+                                            } else {
+                                                $("#details9").hide();
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <label for="OtherIncomes">
+                          <input type="checkbox" id="OtherIncomes" />
+                         <b>Other Incomes</b>
+                      </label><br>
+                                <hr>
+
+                                <div class="container" id="details9" style="display: none">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-8 col-form-label"><b>Rental Income</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"><b>Lessee Type</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="incentivesType">
+                                                      <option value="Individual">Individual</option>
+                                                      <option value="Corporate">Corporate</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Lessee Name</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-8 col-form-label"><b>Rent Amount</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Tenure of Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Tenure Pending</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class=><b>Valid Rent Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="validRentAgreement">
+                                                          <option value="Yes">Yes</option>
+                                                          <option value="No">No</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>If No, Will You Make Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="validRentAgreement">
+                                                          <option value="Yes">Yes</option>
+                                                          <option value="No">No</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>How Old is Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Agreement Type</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="incentivesType">
+                                                            <option value="Registered">Registered</option>
+                                                            <option value="Not Registered">Not Registered</option>
+                                                          </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Reflection in Bank Account</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="reflectionInAccount">
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                      </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Reflection in ITR</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="reflectionInItr">
+                                                              <option value="Yes">Yes</option>
+                                                              <option value="No">No</option>
+                                                            </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Extension Expected In Years</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group-row">
+                                            <br>
+                                            <div>
+                                                <button class="btn btn-primary add_button" id="addIncomeButton" type="button" style="color:white">
+                                                            + Add Other Income </button>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <hr>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("#PvtLtd").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details10").show();
+                            } else {
+                                $("#details10").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="PvtLtd">
+                        <input type="checkbox" id="PvtLtd" />
+                       <b> Pvt Ltd</b>
+                    </label>
+                <hr />
+
+                <div class="container" id="details10" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Pvt Ltd</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="reflectionInItr">
+                          <option value="Proprietorship">Proprietorship</option>
+                          <option value="Partnership">Partnership</option>  
+                          <option value="LLP">LLP</option>  
+                          <option value="Pvt Ltd">Pvt Ltd</option>  
+                          <option value="Public Ltd">Public Ltd</option>  
+                          <option value="MNC's">MNC's</option>  
+                          <option value="Govt">Govt</option>  
+                          <option value="HUF">HUF</option>  
+                          <option value="Trust">Trust</option>  
+                        </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#IncomeDetails").click(function() {
+                                if ($(this).is(":checked")) {
+                                    $("#details11").show();
+                                } else {
+                                    $("#details11").hide();
+                                }
+                            });
+                        });
+                    </script>
+
+                    <label for="IncomeDetails">
+                                  <input type="checkbox" id="IncomeDetails" />
+                                <b> Income Details</b>
+                                </label><br>
+                    <hr>
+
+                    <div class="container" id="details11" style="display: none">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="AYYear">
+                                            <option value="2019-20">2019-20</option>
+                                            <option value="2019-18">2019-18</option>
+                                            <option value="2017-18">2017-18</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Turnover\Gross Receipt</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Gross Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Depreciation</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Interest On Loan</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Directors Remuneration</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Directors Interest</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="AYYear">
+                                                    <option value="2019-20">2019-20</option>
+                                                    <option value="2019-18">2019-18</option>
+                                                    <option value="2017-18">2017-18</option>
+                                                  </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Directors Remuneration</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Directors Interest</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-8 col-form-label "><b>AY Year</b></label>
+                                            <div class="col-sm-9 ">
+                                                <select class="form-control " name="AYYear ">
+                                                        <option value="2019-20 ">2019-20</option>
+                                                        <option value="2019-18 ">2019-18 </option>
+                                                        <option value="2018-17 ">2018-17</option>
+                                                      </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Loss</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Directors Remuneration</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Directors Interest</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <script type="text/javascript">
+                                        $(function() {
+                                            $("#OtherIncomes").click(function() {
+                                                if ($(this).is(":checked")) {
+                                                    $("#details12").show();
+                                                } else {
+                                                    $("#details12").hide();
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                    <label for="OtherIncomes">
+                          <input type="checkbox" id="OtherIncomes" />
+                         <b>Other Incomes</b>
+                      </label><br>
+                                    <hr>
+
+                                    <div class="container" id="details12" style="display: none">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-8 col-form-label"><b>Rental Income</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"><b>Lessee Type</b></label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" name="incentivesType">
+                                                      <option value="Individual">Individual</option>
+                                                      <option value="Corporate">Corporate</option>
+                                                    </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Lessee Name</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br>
+
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-8 col-form-label"><b>Rent Amount</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Tenure of Agreement</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Tenure Pending</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label class=><b>Valid Rent Agreement</b></label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" name="validRentAgreement">
+                                                          <option value="Yes">Yes</option>
+                                                          <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>If No, Will You Make Agreement</b></label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" name="validRentAgreement">
+                                                          <option value="Yes">Yes</option>
+                                                          <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>How Old is Agreement</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Agreement Type</b></label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" name="incentivesType">
+                                                            <option value="Registered">Registered</option>
+                                                            <option value="Not Registered">Not Registered</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Reflection in Bank Account</b></label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" name="reflectionInAccount">
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                      </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Reflection in ITR</b></label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control" name="reflectionInItr">
+                                                              <option value="Yes">Yes</option>
+                                                              <option value="No">No</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <label><b>Extension Expected In Years</b></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group-row">
+                                                <br>
+                                                <div>
+                                                    <button class="btn btn-primary add_button" id="addIncomeButton" type="button" style="color:white">
+                                                            + Add Other Income </button>
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("#Ltd").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details13").show();
+                            } else {
+                                $("#details13").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="Ltd">
+                        <input type="checkbox" id="Ltd" />
+                       <b>Ltd</b>
+                    </label>
+                <hr />
+
+                <div class="container" id="details13" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Ltd</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="reflectionInItr">
+                          <option value="Proprietorship">Proprietorship</option>
+                          <option value="Partnership">Partnership</option>  
+                          <option value="LLP">LLP</option>  
+                          <option value="Pvt Ltd">Pvt Ltd</option>  
+                          <option value="Public Ltd">Public Ltd</option>  
+                          <option value="MNC's">MNC's</option>  
+                          <option value="Govt">Govt</option>  
+                          <option value="HUF">HUF</option>  
+                          <option value="Trust">Trust</option>  
+                        </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript">
+                        $(function() {
+                            $("#IncomeDetails").click(function() {
+                                if ($(this).is(":checked")) {
+                                    $("#details14").show();
+                                } else {
+                                    $("#details14").hide();
+                                }
+                            });
+                        });
+                    </script>
+
+                    <label for="IncomeDetails">
+                                  <input type="checkbox" id="IncomeDetails" />
+                                <b> Income Details</b>
+                                </label><br>
+                    <hr>
+
+                    <div class="container" id="details14" style="display: none">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="AYYear">
+                                            <option value="2019-20">2019-20</option>
+                                            <option value="2019-18">2019-18</option>
+                                            <option value="2017-18">2017-18</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Turnover\Gross Receipt</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Gross Profit</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Depreciation</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Interest On Loan</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Directors Remuneration</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Directors Interest</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"><b>Shareholders</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-8 col-form-label"><b>AY Year</b></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="AYYear">
+                                                    <option value="2019-20">2019-20</option>
+                                                    <option value="2019-18">2019-18</option>
+                                                    <option value="2017-18">2017-18</option>
+                                                  </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Profit</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Net Loss</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group row ">
+                                        <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                        <div class="col-sm-9 ">
+                                            <input type="text " class="form-control ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Directors Remuneration</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Directors Interest</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"><b>Shareholders</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-8 col-form-label "><b>AY Year</b></label>
+                                            <div class="col-sm-9 ">
+                                                <select class="form-control " name="AYYear ">
+                                                        <option value="2019-20 ">2019-20</option>
+                                                        <option value="2019-18 ">2019-18 </option>
+                                                        <option value="2018-17 ">2018-17</option>
+                                                      </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Net Loss</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Turnover\Gross Receipt</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Gross Profit</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Depreciation</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group row ">
+                                            <label class="col-sm-4 col-form-label "><b>Interest On Loan</b></label>
+                                            <div class="col-sm-9 ">
+                                                <input type="text " class="form-control ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Directors Remuneration</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Directors Interest</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label"><b>Shareholders</b></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script type="text/javascript">
+                                    $(function() {
+                                        $("#OtherIncomes").click(function() {
+                                            if ($(this).is(":checked")) {
+                                                $("#details15").show();
+                                            } else {
+                                                $("#details15").hide();
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <label for="OtherIncomes">
+                          <input type="checkbox" id="OtherIncomes" />
+                         <b>Other Incomes</b>
+                      </label><br>
+                                <hr>
+
+                                <div class="container" id="details15" style="display: none">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-8 col-form-label"><b>Rental Income</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"><b>Lessee Type</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="incentivesType">
+                                                      <option value="Individual">Individual</option>
+                                                      <option value="Corporate">Corporate</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Lessee Name</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-8 col-form-label"><b>Rent Amount</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Tenure of Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Tenure Pending</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label class=><b>Valid Rent Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="validRentAgreement">
+                                                          <option value="Yes">Yes</option>
+                                                          <option value="No">No</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>If No, Will You Make Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="validRentAgreement">
+                                                          <option value="Yes">Yes</option>
+                                                          <option value="No">No</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>How Old is Agreement</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Agreement Type</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="incentivesType">
+                                                            <option value="Registered">Registered</option>
+                                                            <option value="Not Registered">Not Registered</option>
+                                                          </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Reflection in Bank Account</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="reflectionInAccount">
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                      </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Reflection in ITR</b></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="reflectionInItr">
+                                                              <option value="Yes">Yes</option>
+                                                              <option value="No">No</option>
+                                                            </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label><b>Extension Expected In Years</b></label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group-row">
+                                            <br>
+                                            <div>
+                                                <button class="btn btn-primary add_button" id="addIncomeButton" type="button" style="color:white">
+                                                            + Add Other Income </button>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <hr>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("#GSTDetails").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details16").show();
+                            } else {
+                                $("#details16").hide();
+                            }
+                        });
+                    });
+                </script>
+                <div>
+                    <label for="GSTDetails">
+              <input type="checkbox" id="GSTDetails" />
+              <b>GST Details</b>
+          </label>
+                </div>
+                <hr>
+
+                <div class="container" id="details16" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>GST applicable</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="GST applicable<">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label"><b>Last 12 Months GST Amount</b></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function() {
+                        $("#ExistingLoanDetails").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details17").show();
+                            } else {
+                                $("#details17").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="ExistingLoanDetails">
+      <input type="checkbox" id="ExistingLoanDetails" />
+      <b>Existing Loan Details</b>
+  </label>
+                <hr />
+                <div class="container" id="details17" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Bank name</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Product/Services</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+        \                               {% for product in products %}
+                                            <option value={{product.product}}>{{product.product}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <!-- <input type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>Loan amount</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>EMI</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Rate of intrest</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Tenure</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>EMI Start Date</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>EMI End Date</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Outstanding Paid by Customer if any</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Outstanding Amount</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>Any bounces?</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+              <option value="Indian">Yes</option>
+              <option value="Non Resident Indian">NO</option>
+            </select>
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <!-- <input type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Moratorium Taken?</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+              <option value="Indian">Yes</option>
+              <option value="Non Resident Indian">NO</option>
+            </select>
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <!-- <input type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <label class="col-md-4 col-form-label"><b>Application Type</b></label>
+                    <!-- <input type="text" class="form-control col-md-4"> -->
+                    <select class="form-control col-md-4" name="role">
+            <option value="Indian">Applicant</option>
+            <option value="Indian">Non Applicant</option>
+            <option value="Indian">worker</option>
+          </select>
+                    <!-- </div> -->
+                    <div class="form-group-row">
+                        <br>
+                        <div>
+                            <button class="btn btn-primary add_button" id="addCustomerButton" type="button" style="color:white">
+              + Add </button>
+                        </div>
+                    </div><br>
+                    <div class="additionalCustomerDetail">
+                    </div>
+
+                    <!-- <h1></h1> -->
+
+                    <script type="text/javascript">
+                        var x = 1;
+
+                        $("#addCustomerButton").click(function() {
+                            alert("One More Customer is Added");
+                            x++; //Increment field counter
+                            $('.additionalCustomerDetail').append(`
+               <div class="customerDetails${x}">
+                <div class="row">
+    <div class="col-md-4">
+      <div class="form-group row">
+        <label class="col-sm-8 col-form-label"><b>Bank name</b></label>
+    <div class="col-sm-9">
+      <!-- Loan Amount Required: -->
+      <!-- <input type="text" id="txtPassportNumber" /> -->
+      <input type="text" class="form-control">
+    </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><b>Product/Services</b></label>
+    <div class="col-sm-9">
+      <select class="form-control" name="role">
+        <option value="Indian">Personal</option>
+        <option value="Non Resident Indian">Buiness</option>
+        <option value="Non Resident Indian">Home</option>
+        <option value="Non Resident Indian">LAP</option>
+        <option value="Non Resident Indian">2Wheeler</option>
+        <option value="Non Resident Indian">4Wheeler</option>
+        <option value="Non Resident Indian">Consumer</option>
+      </select>
+      <!-- Loan Amount Required: -->
+      <!-- <input type="text" id="txtPassportNumber" /> -->
+      <!-- <input type="text" class="form-control"> -->
+    </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group row">
+        <label class="col-sm-6 col-form-label"><b>Loan amount</b></label>
+    <div class="col-sm-9">
+      <!-- Loan Amount Required: -->
+      <!-- <input type="text" id="txtPassportNumber" /> -->
+      <input type="text" class="form-control">
+    </div>
+      </div>
+    </div>
+
+
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><b>EMI</b></label>
+      <div class="col-sm-9">
+        <!-- Loan Amount Required: -->
+        <!-- <input type="text" id="txtPassportNumber" /> -->
+        <input type="text" class="form-control">
+      </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label class="col-sm-8 col-form-label"><b>Rate of intrest</b></label>
+      <div class="col-sm-9">
+        <!-- Loan Amount Required: -->
+        <!-- <input type="text" id="txtPassportNumber" /> -->
+        <input type="text" class="form-control">
+      </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label"><b>Tenure</b></label>
+      <div class="col-sm-9">
+        <!-- Loan Amount Required: -->
+        <!-- <input type="text" id="txtPassportNumber" /> -->
+        <input type="text" class="form-control">
+      </div>
+        </div>
+      </div>
+
+
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group row">
+            <label class="col-sm-8 col-form-label"><b>EMI Start Date</b></label>
+        <div class="col-sm-9">
+          <!-- Loan Amount Required: -->
+          <!-- <input type="text" id="txtPassportNumber" /> -->
+          <input type="text" class="form-control">
+        </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group row">
+            <label class="col-sm-6 col-form-label"><b>EMI End Date</b></label>
+        <div class="col-sm-9">
+          <!-- Loan Amount Required: -->
+          <!-- <input type="text" id="txtPassportNumber" /> -->
+          <input type="text" class="form-control">
+        </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group row">
+            <label class="col-sm-8 col-form-label"><b>Outstanding Paid by Customer if any</b></label>
+        <div class="col-sm-9">
+          <!-- Loan Amount Required: -->
+          <!-- <input type="text" id="txtPassportNumber" /> -->
+          <input type="text" class="form-control">
+        </div>
+          </div>
+        </div>
+
+
+
+        </div>
+
+        
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group row">
+              <label class="col-sm-8 col-form-label"><b>Outstanding Amount</b></label>
+          <div class="col-sm-9">
+            <!-- Loan Amount Required: -->
+            <!-- <input type="text" id="txtPassportNumber" /> -->
+            <input type="text" class="form-control">
+          </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group row">
+              <label class="col-sm-6 col-form-label"><b>Any bounces?</b></label>
+          <div class="col-sm-9">
+            <select class="form-control" name="role">
+              <option value="Indian">Yes</option>
+              <option value="Non Resident Indian">NO</option>
+            </select>
+            <!-- Loan Amount Required: -->
+            <!-- <input type="text" id="txtPassportNumber" /> -->
+            <!-- <input type="text" class="form-control"> -->
+          </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group row">
+              <label class="col-sm-8 col-form-label"><b>Moratorium Taken?</b></label>
+          <div class="col-sm-9">
+            <select class="form-control" name="role">
+              <option value="Indian">Yes</option>
+              <option value="Non Resident Indian">NO</option>
+            </select>
+            <!-- Loan Amount Required: -->
+            <!-- <input type="text" id="txtPassportNumber" /> -->
+            <!-- <input type="text" class="form-control"> -->
+          </div>
+            </div>
+          </div>
+
+
+
+          </div>
+          
+          <label class="col-md-4 col-form-label"><b>Application Type</b></label>
+          <!-- <input type="text" class="form-control col-md-4"> -->
+          <select class="form-control col-md-4" name="role">
+            <option value="Indian">Applicant</option>
+            <option value="Indian">Non Applicant</option>
+            <option value="Indian">worker</option>
+          </select>
+          <br>
+
+          
+
+          <div style="text-align:left">
+      <button class="btn btn-primary mr-3 removeCustomerDetails${x}Button" onclick="removeCustomerDetail('customerDetails${x}')" >
+          Remove 
+      </button>
+</div><hr>
+<br>
+                    
+                             
+
+
+
+          `); //Add field html
+                        });
+
+                        function removeCustomerDetail(parentclass) {
+                            alert("Do You Want to Remove Customer Details?")
+                            $("." + `${parentclass}`).remove();
+                        }
+                    </script>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("#ExistingCardDetails").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details18").show();
+                            } else {
+                                $("#details18").hide();
+                            }
+                        });
+                    });
+                </script>
+                <label for="ExistingCardDetails">
+                <input type="checkbox" id="ExistingCardDetails" />
+               <b> Existing Card Details</b>
+            </label>
+                <hr />
+                <div class="container" id="details18" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Bank Name</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Credit Limit</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Limit Utilize</b></label>
+                                <div class="col-sm-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Minimum Due</b></label>
+                                <div class="col-md-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>Credit Card Age</b></label>
+                                <div class="col-md-9">
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <label class="col-sm-8 col-form-label"><b>Any Delay In Payment</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+                    <option value="Indian">Yes</option>
+                    <option value="Non Resident Indian">NO</option>
+                  </select>
+                                    <!-- Loan Amount Required: -->
+                                    <!-- <input type="text" id="txtPassportNumber" /> -->
+                                    <!-- <input type="text" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label"><b>Year Of Payment Delay</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+                      <option value="Indian">Last 1 year</option>
+                      <option value="Non Resident Indian">Prior to 1 year</option>
+                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label"><b>Moratorium Taken?</b></label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="role">
+                      <option value="Indian">Yes</option>
+                      <option value="Non Resident Indian">NO</option>
+                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn btn-primary add_button" id="addCustomerButton1" type="button" style="color:white">
+                          + Add </button>
+                        <br>
+                    </div>
+                </div>
+                <div class="additionalCustomerDetail1">
+                </div>
+
+                <script type="text/javascript">
+                    var x = 1;
+                    $("#addCustomerButton1").click(function() {
+                        alert("One More Customer is Added");
+                        x++; //Increment field counter
+                        $('.additionalCustomerDetail1').append(`
+                           <div class="customerDetails1${x}">
+                            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <label class="col-sm-8 col-form-label"><b>Bank Name</b></label>
+              <div class="col-sm-9">
+                <!-- Loan Amount Required: -->
+                <!-- <input type="text" id="txtPassportNumber" /> -->
+                <input type="text" class="form-control">
+              </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label"><b>Credit Limit</b></label>
+              <div class="col-sm-9">
+                <!-- Loan Amount Required: -->
+                <!-- <input type="text" id="txtPassportNumber" /> -->
+                <input type="text" class="form-control">
+              </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label"><b>Limit Utilize</b></label>
+              <div class="col-sm-9">
+                <!-- Loan Amount Required: -->
+                <!-- <input type="text" id="txtPassportNumber" /> -->
+                <input type="text" class="form-control">
+              </div>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group row">
+                    <label class="col-sm-8 col-form-label"><b>Minimum Due</b></label>
+                <div class="col-md-9">
+                  <!-- Loan Amount Required: -->
+                  <!-- <input type="text" id="txtPassportNumber" /> -->
+                  <input type="text" class="form-control">
+                </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group row">
+                    <label class="col-sm-6 col-form-label"><b>Credit Card Age</b></label>
+                <div class="col-md-9">
+                  <!-- Loan Amount Required: -->
+                  <!-- <input type="text" id="txtPassportNumber" /> -->
+                  <input type="text" class="form-control">
+                </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group row">
+                    <label class="col-sm-8 col-form-label"><b>Any Delay In Payment</b></label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="role">
+                    <option value="Indian">Yes</option>
+                    <option value="Non Resident Indian">NO</option>
+                  </select>
+                  <!-- Loan Amount Required: -->
+                  <!-- <input type="text" id="txtPassportNumber" /> -->
+                  <!-- <input type="text" class="form-control"> -->
+                </div>
+                  </div>
+                </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-6 col-form-label"><b>Year Of Payment Delay</b></label>
+                  <div class="col-sm-9">
+                    <select class="form-control" name="role">
+                      <option value="Indian">Last 1 year</option>
+                      <option value="Non Resident Indian">Prior to 1 year</option>
+                    </select>
+                   
+                  </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-6 col-form-label"><b>Moratorium Taken?</b></label>
+                  <div class="col-sm-9">
+                    <select class="form-control" name="role">
+                      <option value="Indian">Yes</option>
+                      <option value="Non Resident Indian">NO</option>
+                    </select>
+                  <br>
+                  
+                  <div style="text-align:left">
+                  <button class="btn btn-primary mr-3 removeCustomerDetails1${x}Button" onclick="removeCustomerDetail1('customerDetails1${x}')" >
+                      Remove 
+                  </button>
+          </div>
+           <br>
+           
+                      `); //Add field html
+                    });
+
+                    function removeCustomerDetail1(parentclass) {
+                        alert("Do You Want to Remove Customer Details?")
+                        $("." + `${parentclass}`).remove();
+                    }
+                </script>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label><b>Inward Cheque Return Last 6 Months</b></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label><b>Any Loan Inquiry / Loan Disbursement</b></label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="loanInquiry">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label><b>Details of Loan Inquiries / Loan Dusbursement</b></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("#Investment").click(function() {
+                            if ($(this).is(":checked")) {
+                                $("#details19").show();
+                            } else {
+                                $("#details19").hide();
+                            }
+                        });
+                    });
+                </script>
+                <hr>
+                <label for="Investment">
+            <input type="checkbox" id="Investment" />
+            <b>Investment</b>
+        </label>
+                <hr />
+                <div class="container" id="details19" style="display: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <br>
+
+
+
+        <!-- <h1></h1> -->
+        <div style="text-align:center">
+            <button class="btn btn-primary mr-3" type="submit">CANCEL</button>
+            <button class="btn btn-primary mr-3" type="submit">SAVE & SUBMIT</button>
+            <button class="btn btn-primary mr-3" type="submit">NEXT</button>
+
+        </div>
+
+    </div>
+    </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
